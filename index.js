@@ -283,6 +283,31 @@ async function run() {
       )
     })
 
+    // app.get('/order-stats', async(req, res)=>{
+    //   const result = await paymentCollection.aggregate([
+    //     {
+    //       $unwind:'$menuItemId'
+    //     },
+    //     {
+    //       $lookup:{
+    //         from:'menu',
+    //         localField:'menuItemId',
+    //         foreignFeild:'_id',
+    //         as:'menuItem'
+    //       }
+    //     },{
+    //       $unwind:'$menuItem'
+    //     },
+    //     {
+    //       $group:{
+    //         _id:'$menuItems.category',
+    //         quantity:{$sum: 1},
+    //         revenue:{$sum: menuItem.price}
+    //       }
+    //     }
+    //   ]).toArray()
+    //   res.send(result)
+    // })
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
